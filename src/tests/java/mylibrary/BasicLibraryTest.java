@@ -26,4 +26,16 @@ class BasicLibraryTest {
         assertEquals(-1, BasicLibrary.binarySearch(tmp,0,5,100));
     }
 
+    @Test
+    void linearSearchTestExist() {
+        int [] tmp = {1,6,9,10,25,45};
+        assertEquals(1, BasicLibrary.linearSearch(tmp,6));
+    }
+
+    @Test
+    void linearSearchTestNotExist() {
+        int [] tmp = {1,6,9,10,25,45};
+        assertEquals(-1, BasicLibrary.linearSearch(tmp,44));
+    }
+
 }
