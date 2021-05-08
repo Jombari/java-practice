@@ -21,6 +21,13 @@ public class Graph {
         nodes.add(node);
     }
 
+
+    /**
+     * Tis is an implementation of Dijsktras Shortest Path Algorithm
+     * @param graph the graph
+     * @param src the src node
+     * @return returns the Graph with each node containing shortest distance from the srcNode.
+     */
     public static Graph calculateShortestPathFromNode(Graph graph, Node src){
         src.setDistance(0);
 
@@ -43,7 +50,7 @@ public class Graph {
                     unvisitedNodes.add(adjacentNode);
                 }
             }
-            visitedNodes.add(curNode)
+            visitedNodes.add(curNode);
         }
         return graph;
     }
@@ -61,7 +68,7 @@ public class Graph {
         return lowestDistanceNode;
     }
 
-    private static void CalculateMinimumDistance(Node evaluationNode,
+    private static void calculateMinimumDistance(Node evaluationNode,
                                                  Integer edgeWeigh, Node sourceNode) {
         Integer sourceDistance = sourceNode.getDistance();
         if (sourceDistance + edgeWeigh < evaluationNode.getDistance()) {
