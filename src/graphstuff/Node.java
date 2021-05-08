@@ -23,6 +23,32 @@ public class Node {
 
     Map<Node,Integer> adjacentNodes = new HashMap<>();
 
+    public String getName() {
+        return name;
+    }
+
+    public Integer getDistance() {
+        return distance;
+    }
+
+    public Map<Node, Integer> getAdjacentNodes() {
+        return adjacentNodes;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDistance(Integer distance) {
+        this.distance = distance;
+    }
+
+    public List<Node> getShortestPath() {
+        return shortestPath;
+    }
+
+
+
     public void addDestination(Node destination, int distance){
         adjacentNodes.put(destination,distance);
     }
