@@ -8,10 +8,7 @@ package graphstuff;
  */
 
 
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class Graph {
 
@@ -79,9 +76,32 @@ public class Graph {
         }
     }
 
-    void BFS(Graph graph, Node src, String target){
-        Set<Node> visitedNodes = new HashSet<>();
+    public static String BFS(Graph graph, Node src, String target){
+        LinkedList<Node> q = new LinkedList<>();
+        q.push(src);
+        HashSet<String> visited = new HashSet<>();
+        for (Node tmp :
+                src.getAdjacentNodes().keySet()) {
+            q.push(tmp);
+        }
+        while(!q.isEmpty()){
+            Node curNode = q.pop();
+            if(!visited.contains(curNode.getName())){
+                if(curNode.getName().equals(target))
+                    return target +" found.";
+                else{
+                    for (Node tmp :
+                            curNode.getAdjacentNodes().keySet()) {
+                        q.push(tmp);
+                    }
+                    visited.add(curNode.getName());
+                }
+
+            }
+        }
+        return target + " not found.";
 
     }
+
 
 }
