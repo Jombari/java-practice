@@ -12,18 +12,18 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 
 
-class basicLibraryTest {
+class BasicLibraryTest {
 
     @Test
     void binarySearchExist() {
         int [] tmp = {1,6,9,10,25,45};
-        assertEquals(1,basicLibrary.binarySearch(tmp,0,5,6));
+        assertEquals(1, BasicLibrary.binarySearch(tmp,0,5,6));
     }
 
     @Test
     void binarySearchNotExist() {
         int[] tmp = {1,6,9,10,25,45};
-        assertEquals(-1,basicLibrary.binarySearch(tmp,0,5,100));
+        assertEquals(-1, BasicLibrary.binarySearch(tmp,0,5,100));
     }
 
 }

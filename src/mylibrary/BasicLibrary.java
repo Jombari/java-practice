@@ -8,7 +8,7 @@ package mylibrary;
  */
 
 
-public class basicLibrary {
+public class BasicLibrary {
 
     public static int binarySearch(int arr[],int l, int r, int x){
         if(r>=l){
